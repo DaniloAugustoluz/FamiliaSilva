@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Pizzaria Família Silva | Delivery na Baronesa, Osasco</title>
+<meta name="description" content="Pizzas, lanches e pastéis na Baronesa, em Osasco. Monte seu pedido, escolha meio a meio e envie pelo WhatsApp.">
+<meta name="theme-color" content="#15110d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pizzaria Família Silva">
+<meta property="og:description" content="Quem prova, aprova! Monte seu pedido e envie pelo WhatsApp.">
+<meta property="og:image" content="https://pizzaria-familia-silva.netlify.app/og.jpg">
+<meta property="og:url" content="https://pizzaria-familia-silva.netlify.app/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="g-massa" cx="45%" cy="40%" r="62%"><stop offset="72%" stop-color="#e7b568"/><stop offset="88%" stop-color="#cf8d3d"/><stop offset="100%" stop-color="#9c5a1f"/></radialGradient>
+    <radialGradient id="g-queijo" cx="42%" cy="38%" r="70%"><stop offset="0%" stop-color="#ffe29a"/><stop offset="65%" stop-color="#f8c95f"/><stop offset="100%" stop-color="#eba838"/></radialGradient>
+    <radialGradient id="g-choco" cx="42%" cy="38%" r="70%"><stop offset="0%" stop-color="#6b3a1f"/><stop offset="100%" stop-color="#3f1f10"/></radialGradient>
+    <radialGradient id="g-doce" cx="42%" cy="38%" r="70%"><stop offset="0%" stop-color="#d99a4e"/><stop offset="100%" stop-color="#a7662a"/></radialGradient>
+  </defs>
+</svg>
+
+<p class="faixa">Prévia do site feita pela Alpha Solution</p>
+
+<header class="topo">
+  <a class="marca" href="#inicio" aria-label="Pizzaria Família Silva, voltar ao início">
+    <svg class="marca-fig" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#f6b93b"/><path d="M9 14 24 43 39 14c-9-5-21-5-30 0Z" fill="#f8c95f"/><path d="M7.500 12.500c10-6.200 23-6.200 33 0l-2.200 4c-8.700-5-19.900-5-28.600 0Z" fill="#b8702a"/><circle cx="20" cy="20" r="3.600" fill="#d62e24"/><circle cx="28.500" cy="23" r="3.600" fill="#d62e24"/><circle cx="23.500" cy="30.500" r="3" fill="#d62e24"/></svg>
+    <span><small>Pizzaria</small>Família Silva</span>
+  </a>
+  <nav class="nav" aria-label="Seções">
+    <a href="#cardapio">Cardápio</a>
+    <a href="#meio">Meio a meio</a>
+    <a href="#onde">Onde estamos</a>
+  </nav>
+  <button class="sacola-btn" id="abrirSacola" type="button" aria-label="Abrir sacola">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1.200 12.200a.8.8 0 0 1-.8.800H5.600a.8.8 0 0 1-.8-.800L6 8Zm3 0V6.500a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.900" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="so-desk">Sacola</span><b id="qtdTopo" hidden>0</b>
+  </button>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero-texto">
+      <p class="status" id="status"></p>
+      <h1>Quem prova,<br><em>aprova!</em></h1>
+      <p class="lead">Há 8 anos fazendo pizza em Osasco. Escolha os sabores, monte a sua meio a meio e mande o pedido pronto pelo WhatsApp.</p>
+      <div class="acoes">
+        <a class="btn btn-forte" href="#cardapio">Fazer meu pedido</a>
+        <a class="btn btn-linha" href="#meio">Montar meio a meio</a>
+      </div>
+      <ul class="selos">
+        <li><b>4,8</b><span>no Google, com 105 avaliações</span></li>
+        <li><b>46</b><span>sabores salgados e 5 doces</span></li>
+        <li><b>30–50</b><span>minutos para entregar</span></li>
+      </ul>
+    </div>
+    <div class="hero-pizza" aria-hidden="true"><div class="gira" id="heroPizza"></div></div>
+  </section>
+  <div class="toalha" aria-hidden="true"></div>
+
+  <section class="meio" id="meio">
+    <div class="caixa meio-grade">
+      <div class="meio-fig"><div id="meioPizza"></div></div>
+      <div class="meio-form">
+        <h2>Monte a sua meio a meio</h2>
+        <p class="sub">Dois sabores na mesma pizza. Vale o preço do sabor de maior valor.</p>
+        <label class="campo">Primeira metade<select id="meioA"></select></label>
+        <label class="campo">Segunda metade<select id="meioB"></select></label>
+        <div class="tamanhos" role="radiogroup" aria-label="Tamanho" id="meioTam"></div>
+        <button class="btn btn-forte largo" id="meioAdd" type="button"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cardapio" id="cardapio">
+    <div class="caixa">
+      <div class="card-topo">
+        <h2>Cardápio</h2>
+        <label class="busca"><span class="oculto">Buscar no cardápio</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.500" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.500 4.500" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="busca" type="search" placeholder="Busque por sabor ou ingrediente" autocomplete="off">
+        </label>
+      </div>
+    </div>
+    <div class="abas-wrap"><div class="caixa"><div class="abas" id="abas" role="tablist" aria-label="Categorias"></div></div></div>
+    <div class="caixa"><div id="lista"></div></div>
+  </section>
+
+  <section class="onde" id="onde">
+    <div class="caixa onde-grade">
+      <div>
+        <h2>Onde estamos</h2>
+        <p class="endereco">R. Padre Kassabian, 636 B<br>Baronesa, Osasco - SP, 06266-150</p>
+        <p class="sub-escuro">Delivery e retirada no balcão.</p>
+        <div class="acoes">
+          <a class="btn btn-forte" href="https://www.google.com/maps/search/?api=1&query=Pizzaria+Fam%C3%ADlia+Silva+R.+Padre+Kassabian+636+Osasco" target="_blank" rel="noopener">Ver no mapa</a>
+          <a class="btn btn-linha" id="zapDireto" href="#" target="_blank" rel="noopener">(11) 94962-3319</a>
+        </div>
+        <p class="insta"><a href="https://www.instagram.com/pizzariafamilia_silva/" target="_blank" rel="noopener">@pizzariafamilia_silva</a> no Instagram</p>
+      </div>
+      <div>
+        <h3>Horários</h3>
+        <ul class="horas" id="horas"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p>Pizzaria Família Silva, Osasco</p>
+  <p>Prévia de site por <a href="https://alphasolution.com.br" target="_blank" rel="noopener">Alpha Solution</a>. Preços conforme o cardápio publicado pela pizzaria no Google, a confirmar com a casa.</p>
+</footer>
+
+<button class="barra" id="barra" type="button" hidden><span id="barraQtd"></span><b id="barraTotal"></b></button>
+
+<dialog class="modal" id="modalItem" aria-labelledby="miNome">
+  <form method="dialog"><button class="fechar" aria-label="Fechar">×</button></form>
+  <div class="mi-fig" id="miFig"></div>
+  <h3 id="miNome"></h3>
+  <p id="miDesc"></p>
+  <div class="tamanhos" role="radiogroup" aria-label="Tamanho" id="miTam"></div>
+  <label class="campo"><span id="miObsRotulo">Observação (opcional)</span><textarea id="miObs" rows="2" maxlength="160"></textarea></label>
+  <div class="mi-acoes">
+    <div class="qtd"><button type="button" id="miMenos" aria-label="Diminuir">−</button><output id="miQtd">1</output><button type="button" id="miMais" aria-label="Aumentar">+</button></div>
+    <button class="btn btn-forte" id="miAdd" type="button"></button>
+  </div>
+</dialog>
+
+<dialog class="sacola" id="sacola" aria-labelledby="sTitulo">
+  <div class="s-topo"><h3 id="sTitulo">Sua sacola</h3><form method="dialog"><button class="fechar" aria-label="Fechar sacola">×</button></form></div>
+  <div class="s-corpo">
+    <div id="sItens"></div>
+    <form id="sForm" novalidate>
+      <div class="troca" role="radiogroup" aria-label="Como você quer receber">
+        <label><input type="radio" name="modo" value="Entrega" checked><span>Entrega</span></label>
+        <label><input type="radio" name="modo" value="Retirada"><span>Retirada</span></label>
+      </div>
+      <label class="campo">Seu nome<input name="nome" autocomplete="name" required></label>
+      <div id="sEntrega">
+        <label class="campo">Endereço e número<input name="rua" autocomplete="street-address" required></label>
+        <div class="dupla">
+          <label class="campo">Bairro<input name="bairro" required></label>
+          <label class="campo">Complemento<input name="compl"></label>
+        </div>
+      </div>
+      <label class="campo">Forma de pagamento
+        <select name="pag"><option>Pix</option><option>Cartão na entrega</option><option>Dinheiro</option></select>
+      </label>
+      <label class="campo" id="sTroco" hidden>Troco para quanto?<input name="troco" inputmode="decimal" placeholder="Ex.: 100"></label>
+      <p class="erro" id="sErro" role="alert"></p>
+    </form>
+  </div>
+  <div class="s-pe">
+    <dl><div><dt>Itens</dt><dd id="sTotal"></dd></div><div id="sTaxa"><dt>Taxa de entrega</dt><dd>confirmada no WhatsApp</dd></div></dl>
+    <button class="btn btn-zap largo" id="sEnviar" type="button">Enviar pedido no WhatsApp</button>
+  </div>
+</dialog>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
